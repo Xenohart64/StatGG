@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class LoL extends Model
 { 
-    const API = "RGAPI-6a9527d8-e769-402f-b152-1933f90e81db";
+    const API = "";
     
     //////////////////////////////////////
     /////////////Summoner/////////////////
