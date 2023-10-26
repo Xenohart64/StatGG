@@ -5,8 +5,9 @@
     "\\app\\Http",
     "\\app\\Models",
     "\\resources",
-    "\\resources\\views"
+    "\\resources\\views",
+    "\\routes"
   ],
-  "SelectedNode": "\\resources\\views\\profillol.blade.php",
+  "SelectedNode": "\\routes\\web.php",
   "PreviewInSolutionExplorer": false
 }
