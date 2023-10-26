@@ -205,6 +205,9 @@
                             @if($match["participants"][$j]->item5 != 0)
                                 <img style='width:25px;' src='http://ddragon.leagueoflegends.com/cdn/{{json_decode($version)[0]}}/img/item/{{$match["participants"][$j]->item5}}.png'>
                             @endif
+                            @if($match["participants"][$j]->item6 != 0)
+                                <img style='width:25px;' src='http://ddragon.leagueoflegends.com/cdn/{{json_decode($version)[0]}}/img/item/{{$match["participants"][$j]->item6}}.png'>
+                            @endif
                             </a>
                     @endif
                 @endfor
@@ -421,6 +424,9 @@
             @endif
             @if($match["participants"][$j]->item5 != 0)
                 <img style='width:25px;' src='http://ddragon.leagueoflegends.com/cdn/{{json_decode($version)[0]}}/img/item/{{$match["participants"][$j]->item5}}.png'>
+            @endif
+            @if($match["participants"][$j]->item6 != 0)
+                <img style='width:25px;' src='http://ddragon.leagueoflegends.com/cdn/{{json_decode($version)[0]}}/img/item/{{$match["participants"][$j]->item6}}.png'>
             @endif
             </td>
             <td class='uk-text-emphasis'> 
