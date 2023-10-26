@@ -178,12 +178,14 @@
                             <a class='uk-accordion-title' href='#' style='background-color: #F5B7B1'>
                         @endif
 
-                        {{$match["gameType"]}}
+                        {{$match["info"]->gameMode}}
                         @if($match["participants"][$j]->win == true)
-                            Victory<br/>
+                            Victory
                         @else
-                            Defeat<br/>
+                            Defeat
                         @endif
+
+                        {{gmdate("i:s", $match["info"]->gameDuration)}}<br/>
 
                             {{$match["participants"][$j]->championName}}
                             <img style='width:50px;' src='http://ddragon.leagueoflegends.com/cdn/{{json_decode($version)[0]}}/img/champion/{{$match["participants"][$j]->championName}}.png'>

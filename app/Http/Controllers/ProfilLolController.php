@@ -43,12 +43,12 @@ class ProfilLolController extends Controller
             for($i=0;$i<count($resultMatches);$i++){
                 $match = json_decode($lol->getMatchById($server, $resultMatches[$i]));
                 //dd($match);
-                $gameType = $match->info->gameMode;
+                $info = $match->info;
                 for($j=0;$j<count($match->info->participants);$j++){
                     $participants[] = $match->info->participants[$j];
                 }
-                $matchesList[] = array("gameType" => $gameType, "participants" => $participants);
-                unset($gameType);
+                $matchesList[] = array("info" => $info, "participants" => $participants);
+                unset($info);
                 unset($participants);
             }
 
