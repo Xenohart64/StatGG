@@ -177,7 +177,14 @@
                         @else
                             <a class='uk-accordion-title' href='#' style='background-color: #F5B7B1'>
                         @endif
-                            {{$match["gameType"]}}<br/>
+
+                        {{$match["gameType"]}}
+                        @if($match["participants"][$j]->win == true)
+                            Victory<br/>
+                        @else
+                            Defeat<br/>
+                        @endif
+
                             {{$match["participants"][$j]->championName}}
                             <img style='width:50px;' src='http://ddragon.leagueoflegends.com/cdn/{{json_decode($version)[0]}}/img/champion/{{$match["participants"][$j]->championName}}.png'>
                             {{$match["participants"][$j]->champLevel}} 
