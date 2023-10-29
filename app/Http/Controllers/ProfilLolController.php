@@ -51,14 +51,8 @@ class ProfilLolController extends Controller
                 unset($info);
                 unset($participants);
             }
-
-
-            //winrate
-            $winrate = $resultRank[0]->wins + $resultRank[0]->losses;
-            $winrate = $resultRank[0]->wins/$winrate*100;
-            $winrate = round($winrate, $précision = 2, $mode = PHP_ROUND_HALF_UP);
             
     
-            return view('lol', ['summoner' => $resultName, 'rank' => $resultRank, 'version' => $version, 'matches' => $matchesList, 'winrate' => $winrate]);
+            return view('lol', ['summoner' => $resultName, 'ranks' => $resultRank, 'version' => $version, 'matches' => $matchesList]);
     }
 }
