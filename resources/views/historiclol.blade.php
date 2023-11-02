@@ -219,6 +219,7 @@
                             @endif
                             <ul>
                                 <li>Control ward: {{$match["participants"][$j]->detectorWardsPlaced}}</li>
+                                <li>CS {{$match["participants"][$j]->totalMinionsKilled + $match["participants"][$j]->neutralMinionsKilled}}</li>
                             </ul>
                             </a>
                     @endif
