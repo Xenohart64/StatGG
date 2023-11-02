@@ -217,6 +217,9 @@
                             @if($match["participants"][$j]->item6 != 0)
                                 <img style='width:25px;' src='http://ddragon.leagueoflegends.com/cdn/{{json_decode($version)[0]}}/img/item/{{$match["participants"][$j]->item6}}.png'>
                             @endif
+                            <ul>
+                                <li>Control ward: {{$match["participants"][$j]->detectorWardsPlaced}}</li>
+                            </ul>
                             </a>
                     @endif
                 @endfor
