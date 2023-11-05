@@ -404,7 +404,7 @@ class LoL extends Model
     ///////////////Icon///////////////////
     //////////////////////////////////////
     
-    public function getFrofileIcons(){
+    public function getProfileIcons(){
         $version = $this->getVersion();
         $version = json_decode($version);
         $url = "http://ddragon.leagueoflegends.com/cdn/".$version[0]."/data/en_US/profileicon.json";
@@ -435,6 +435,37 @@ class LoL extends Model
         $version = $this->getVersion();
         $version = json_decode($version);
         $url = "http://ddragon.leagueoflegends.com/cdn/".$version[0]."/img/item/$profileIcon.png";
+        
+        $ch = curl_init();
+
+        //set the url, number of POST vars, POST data
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        
+        /*$headers = array(
+           "X-Riot-Token: RGAPI-a56be06f-2d11-498e-9574-c7bb482ba5a4",
+        );
+        
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);*/
+
+        //execute post
+        $result = curl_exec($ch);
+
+        //close connection
+        curl_close($ch);
+
+        return $result;
+    }
+
+    //////////////////////////////////////
+    ///////////////Rune///////////////////
+    //////////////////////////////////////
+
+    public function getRunes(){
+        $version = $this->getVersion();
+        $version = json_decode($version);
+        $url = "http://ddragon.leagueoflegends.com/cdn/".$version[0]."/data/en_US/runesReforged.json";
         
         $ch = curl_init();
 
